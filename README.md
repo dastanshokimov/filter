@@ -24,15 +24,16 @@ java --version
 gradle --version
 ```
 
-####  Сборка через Gradle
+####  Сначала сборка через Gradle
 ```bash
 ./gradlew clean build
 ```
 
-#### Запуск JAR
+#### Затем запуск JAR
 ```bash
 java -jar build/libs/filter-1.0-SNAPSHOT.jar [опции] [файлы]
 ```
+##### Файлы появятся в пути /out внутри проекта
 
 ---
 
@@ -50,5 +51,5 @@ java -jar build/libs/filter-1.0-SNAPSHOT.jar [опции] [файлы]
 
 ### 📂 Пример запуска
 ```bash
-java -jar build/libs/utilfilter-1.0.jar -f -p demo_ -o out/ in1.txt in2.txt
+java -jar build/libs/filter-1.0-SNAPSHOT.jar -f -p demo_ -o out/ in1.txt in2.txt
 ```
