@@ -1,15 +1,16 @@
 package myfilter;
 
+import myfilter.exception.HelpPrintedException;
+
 public class OptionsValidator {
     public static void validate(Options options) {
         if (options.inputFiles.contains("--help")) {
             printHelp();
-            System.exit(0);
+            throw new HelpPrintedException();
         }
 
         if (options.shortStats && options.fullStats) {
-            System.err.println("Ошибка: нельзя использовать -s и -f одновременно. Выберите только одну статистику.");
-            System.exit(1);
+            throw new IllegalStateException("Ошибка: нельзя использовать -s и -f одновременно.");
         }
 
         if (!options.shortStats && !options.fullStats) {
